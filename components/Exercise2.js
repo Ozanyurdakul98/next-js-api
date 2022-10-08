@@ -16,7 +16,7 @@ export default function Exercise2() {
 
       return setData2(JSON.stringify(data, null, 4));
     }
-    setData2('No User found, please enter valid ID');
+    setData2('No User found, please an ID');
     setResult1(false);
   }
 
