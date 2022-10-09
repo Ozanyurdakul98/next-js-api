@@ -8,8 +8,10 @@ export default function Exercise3() {
       method: 'POST',
       body: JSON.stringify(data),
     });
+    console.log(res, res.text, 'body');
     const message = await res.json();
     setData3(JSON.stringify(message, null, 4));
+    console.log(message);
   }
 
   return (

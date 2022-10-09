@@ -13,11 +13,12 @@ export async function getUserById(id) {
 export async function createUser(name, gender, email) {
   const data = await promises.readFile('db/users.json', 'utf-8');
   const users = JSON.parse(data);
+  const test = JSON.parse(name);
   const newUser = {
     _id: Math.random().toString(36).substring(2),
-    name,
-    gender,
-    email,
+    name: test.name,
+    gender: test.gender,
+    email: test.email,
   };
   const newUsers = [...users, newUser];
   await promises.writeFile('db/users.json', JSON.stringify(newUsers, null, 2));
