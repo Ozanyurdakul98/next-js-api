@@ -11,12 +11,13 @@ export default function Exercise2() {
   async function fetchExercise2(id) {
     if (id) {
       const res = await fetch(`/api/users/${id}`);
+      // console.log('res1', res.json());
       const data = await res.json();
+      console.log('res', data);
       setResult1(false);
-
       return setData2(JSON.stringify(data, null, 4));
     }
-    setData2('No User found, please an ID');
+    setData2('No User found, please enter an ID');
     setResult1(false);
   }
 

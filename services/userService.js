@@ -7,7 +7,15 @@ export async function getAllUsers() {
 
 export async function getUserById(id) {
   const data = await promises.readFile('db/users.json', 'utf-8');
-  return JSON.parse(data).find(user => user._id === id);
+  if (JSON.parse(data).find(user => user._id === id)) {
+    console.log(
+      'data',
+      JSON.parse(data).find(user => user._id === id),
+    );
+    return JSON.parse(data).find(user => user._id === id);
+  } else {
+    return;
+  }
 }
 
 export async function createUser(name, gender, email) {
